@@ -54,7 +54,7 @@ mqq1 = Question("Leave the gun, take the cannoli's...", "The Godfather", cat5.ca
 mqq2 = Question("But you merely adopted the dark; I was born in it, moulded by it... ", "The Dark Knight Rises", cat5.category, pt2.points)
 mqq3 = Question("I ate his liver with some fava beans and a nice Chianti", "The Slience of the Lambs", cat5.category, pt3.points)
 mqq4 = Question("It was Johnny Hopkins and Sloan Ketting. And they were blazing that sh*t up every day...", "Step Brothers", cat5.category, pt4.points)
-mqq5 = Question("", "", cat5.category, pt5.points)
+mqq5 = Question("I like to move it, move it!", "Madagascar", cat5.category, pt5.points)
 
 
 session.add_all([cat1, cat2, cat3, cat4, cat5])
