@@ -59,6 +59,13 @@ mqq5 = Question("I like to move it, move it!", "Madagascar", cat5.category, pt5.
 
 session.add_all([cat1, cat2, cat3, cat4, cat5])
 session.add_all([pt1, pt2, pt3, pt4, pt5])
-session.add_all([sciq1,sciq2,sciq3,sciq4,sciq5])
+session.add_all([
+    sciq1,sciq2,sciq3,sciq4,sciq5,
+    aniq1,aniq2,aniq3,aniq4,aniq5,
+    fiq1,fiq2,fiq3,fiq4,fiq5,
+    mqq1, mqq2, mqq3, mqq4, mqq5, 
+    bhq1,bhq2,bhq3,bhq4,bhq5
+    ])
+
 
 session.commit()
