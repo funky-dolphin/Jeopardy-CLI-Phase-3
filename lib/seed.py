@@ -12,7 +12,9 @@ Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
 
-session.query(Category, Question).delete()
+session.query(Category).delete()
+session.query(Point).delete()
+session.query(Question).delete()
 
 cat1 = Category(" ")
 cat2 = Category(" ")
