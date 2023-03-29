@@ -44,11 +44,11 @@ bhq3 = Question("", "", cat3.category, pt3.points)
 bhq4 = Question("", "", cat3.category, pt4.points)
 bhq5 = Question("", "", cat3.category, pt5.points)
 
-fiq1 = Question("", "", cat4.category, pt1.points)
-fiq2 = Question("", "", cat4.category, pt2.points)
-fiq3 = Question("", "", cat4.category, pt3.points)
-fiq4 = Question("", "", cat4.category, pt4.points)
-fiq5 = Question("", "", cat4.category, pt5.points)
+fiq1 = Question("Founded in 1971, the National Association of Securities Dealers Automated Quotations is better known as what stock exchange?", "NASDAQ", cat4.category, pt1.points)
+fiq2 = Question("What “S” venture capital firm, founded in 1972 by Donald Valentine in Menlo Park, CA, shares its name with a large tree species that is one of the redwood tree types.", "Sequoia Capital", cat4.category, pt2.points)
+fiq3 = Question("Former J.P. Morgan Chase employee Bruno Iksil acquired what large mammalian nickname after losing the company a staggering $6.2 billion with a 2012 trade?", "London Whale", cat4.category, pt3.points)
+fiq4 = Question("Also known as an acid test, what 'rapid' two-word term means an indicator of a company’s short-term liquidity position, which measures a company’s ability to meet its short-term obligations with its most liquid assets?", "Quick ratio", cat4.category, pt4.points)
+fiq5 = Question("In the wake of the 2008 financial crisis, the federal government instituted TARP, which stood for 'Troubled ___ Relief Program.' What word goes in the blank?", "Asset", cat4.category, pt5.points)
 
 mqq1 = Question("Leave the gun, take the cannoli's...", "The Godfather", cat5.category, pt1.points)
 mqq2 = Question("But you merely adopted the dark; I was born in it, moulded by it... ", "The Dark Knight Rises", cat5.category, pt2.points)
@@ -59,6 +59,13 @@ mqq5 = Question("I like to move it, move it!", "Madagascar", cat5.category, pt5.
 
 session.add_all([cat1, cat2, cat3, cat4, cat5])
 session.add_all([pt1, pt2, pt3, pt4, pt5])
-session.add_all([sciq1, sciq2, sciq3, sciq4, sciq5, mqq1, mqq2, mqq3, mqq4, mqq5])
+session.add_all([
+    sciq1,sciq2,sciq3,sciq4,sciq5,
+    aniq1,aniq2,aniq3,aniq4,aniq5,
+    fiq1,fiq2,fiq3,fiq4,fiq5,
+    mqq1, mqq2, mqq3, mqq4, mqq5, 
+    bhq1,bhq2,bhq3,bhq4,bhq5
+    ])
+
 
 session.commit()
