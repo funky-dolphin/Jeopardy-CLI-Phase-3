@@ -44,3 +44,17 @@ class Question(Base):
         
     def __repr__(self):
         return f"{self.question} {self.answer} {self.category} {self.point}"
+    
+class Players(Base):
+    __tablename__="players"
+
+    id=Column("key", Integer, primary_key=True)
+    player_name = Column("player_name", String)
+    score = Column("score", Integer)
+
+    def __init__(self, player_name, score):
+        self.player_name = player_name
+        self.score = score
+
+    def __repr__(self):
+        return f"{self.player_name} {self.score}"
