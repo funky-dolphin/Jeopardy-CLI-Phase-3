@@ -8,6 +8,7 @@ ipdb = "*"
 sqlalchemy = "*"
 alembic = "*"
 numpy = "*"
+prettytable = "*"
 
 [dev-packages]
 

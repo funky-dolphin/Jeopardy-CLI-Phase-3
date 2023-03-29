@@ -1,6 +1,5 @@
 from models import Base, Category, Point, Question
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy import create_engine
 
 engine = create_engine("sqlite:///Jeopardy.db")
@@ -26,7 +25,7 @@ pt3 = Point(300)
 pt4 = Point(400)
 pt5 = Point(500)
 
-sciq1 = Question("What is the boiling point of water in fahrenheit?", "212", cat1.category, pt1.points )
+sciq1 = Question("What is the boiling point of water in fahrenheit?", "212", cat1.category, pt1.points)
 sciq2 = Question("What gas comprises about 70 percent of earth's atmosphere?", "Nitrogen", cat1.category, pt2.points )
 sciq3 = Question("What type of bond involves the sharing of electron pairs?", "Covalent", cat1.category, pt3.points )
 sciq4 = Question("Issac Newton had three laws of motion.  What is his second law of motion, commonly expressed in a simple mathmatical expression?" , "F = m*a", cat1.category, pt4.points )
@@ -60,7 +59,7 @@ mqq5 = Question("I like to move it, move it!...", "Madagascar", cat5.category, p
 session.add_all([cat1, cat2, cat3, cat4, cat5])
 session.add_all([pt1, pt2, pt3, pt4, pt5])
 session.add_all([
-    sciq1,sciq2,sciq3,sciq4,sciq5,
+    sciq1,sciq2 ,sciq3,sciq4,sciq5,
     aniq1,aniq2,aniq3,aniq4,aniq5,
     fiq1,fiq2,fiq3,fiq4,fiq5,
     mqq1, mqq2, mqq3, mqq4, mqq5, 

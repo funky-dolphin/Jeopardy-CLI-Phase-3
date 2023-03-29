@@ -35,17 +35,19 @@ class Question(Base):
     answer = Column("answer", String)
     category = Column(String, ForeignKey("categories.category"))
     point = Column (Integer, ForeignKey("points.points"))
+    selected = Column("selected", Integer)
 
-    def __init__(self, question, answer, category, point):
+    def __init__(self, question, answer, category, point, selected = 0):
         self.question = question
         self.answer = answer
         self.category = category
         self.point = point
+        self.selected = selected
         
     def __repr__(self):
         return f"{self.question} {self.answer} {self.category} {self.point}"
     
-class Players(Base):
+class Player(Base):
     __tablename__="players"
 
     id=Column("key", Integer, primary_key=True)
