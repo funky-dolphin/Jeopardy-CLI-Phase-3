@@ -122,7 +122,7 @@ def answer():
     global all_points
     input_answer = input("Answer below: \n")
     if all_points < 7500:
-        if chosen_question.answer == input_answer:
+        if chosen_question.answer.lower() == input_answer.lower():
             print("Correct!")
             if turn % 2 == 0:
                 p2.score += int(points)
