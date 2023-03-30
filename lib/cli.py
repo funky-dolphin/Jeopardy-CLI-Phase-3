@@ -22,12 +22,37 @@ session = Session()
 # table.add_row([400, 400, 400, 400, 400])
 # table.add_row([500, 500, 500, 500, 500])
 
-points_for_table = session.query(Point.points).all()
-print(points_for_table)
-table1 = PrettyTable()
-table1.field_names = ["Science","Anime", "Bizzare History", "Finance", "Movie Quotes"]
-table1.add_column("Science",[points_for_table])
-print(table1)
+with open("seed.py") as f:
+        exec(f.read())
+
+def print_table():
+
+    global table 
+    table = PrettyTable()
+
+    table_query_science = session.query(Question.point).filter(Question.category == "Science").all()
+    table_list_science = [item for t in table_query_science for item in t]
+
+    table_query_anime = session.query(Question.point).filter(Question.category == "Anime").all()
+    table_list_anime = [item for t in table_query_anime for item in t]
+
+    table_query_history = session.query(Question.point).filter(Question.category == "Bizarre History").all()
+    table_list_history = [item for t in table_query_history for item in t]
+
+    table_query_finance = session.query(Question.point).filter(Question.category == "Finance").all()
+    table_list_finance = [item for t in table_query_finance for item in t]
+
+    table_query_movie = session.query(Question.point).filter(Question.category == "Movie Quotes").all()
+    table_list_movie = [item for t in table_query_movie for item in t]
+
+    columns=["Science", "Anime", "Bizzare History", "Finance", "Movie Quotes"]
+    table.add_column(columns[0], table_list_science)
+    table.add_column(columns[1], table_list_anime)
+    table.add_column(columns[2], table_list_history)
+    table.add_column(columns[3], table_list_finance)
+    table.add_column(columns[4], table_list_movie)
+
+
 
 print("""
 
@@ -38,7 +63,12 @@ print("""
 ╚█████╔╝███████╗╚██████╔╝██║     ██║  ██║██║  ██║██████╔╝   ██║   
  ╚════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝    ╚═╝                                                                   
  """)
+<<<<<<< HEAD
 # print(f'\n{table }')
+=======
+print_table()
+print(f'\n{table}')
+>>>>>>> main
 
 all_categories = session.query(Category).all()
 # all_points = session.query(Point).all()
@@ -50,8 +80,7 @@ def username():
     global p2
     global turn
     turn = 1
-    with open("seed.py") as f:
-        exec(f.read())
+    
 
     session.query(Player).delete()
     
@@ -68,7 +97,9 @@ def pick_category():
     score = session.query(Player).filter(Player.score == "s")
     # global questions
     cat_list = [category.category for category in all_categories]
-    print(f'\n{ cat_list}')
+    print_table()
+
+    print(f'\n{table}')
     
     if turn % 2 != 0:
         category = input(f"\n{p1.player_name} Please choose a category:\n")
@@ -94,6 +125,7 @@ def pick_category():
         print(f'\n{p1.player_name} Score: {p1.score}\n{p2.player_name} Score: {p2.score}')
         pick_category()
     elif category.lower() == "t":
+        print_table()
         print(f'\n{table }') 
         pick_category()
     else:
@@ -115,30 +147,35 @@ def pick_point():
         chosen_question = chosen_cat.filter(Question.point == 100).first()
         print(f'\n{chosen_question.question}')
         chosen_question.selected = 1
+        chosen_question.point = 0
         session.commit()
         answer()
     elif points == '200':
         chosen_question = chosen_cat.filter(Question.point == 200).first()
         print(f'\n{chosen_question.question}')
         chosen_question.selected = 1
+        chosen_question.point = 0
         session.commit()
         answer()
     elif points == '300':
         chosen_question = chosen_cat.filter(Question.point == 300).first()
         print(f'\n{chosen_question.question}')
         chosen_question.selected = 1
+        chosen_question.point = 0
         session.commit()
         answer()
     elif points == '400':
         chosen_question = chosen_cat.filter(Question.point == 400).first()
         print(f'\n{chosen_question.question}')
         chosen_question.selected = 1
+        chosen_question.point = 0
         session.commit()
         answer()
     elif points == '500':
         chosen_question = chosen_cat.filter(Question.point == 500).first()
         print(f'\n{chosen_question.question}')
         chosen_question.selected = 1
+        chosen_question.point = 0
         session.commit()
         answer()
     else:
