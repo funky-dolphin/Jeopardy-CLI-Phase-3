@@ -14,14 +14,6 @@ engine = create_engine('sqlite:///Jeopardy.db')
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# table = PrettyTable()
-# table.field_names = ["Science", "Anime", "Bizzare History", "Finance", "Movie Quotes"]
-# table.add_row([100, 100, 100, 100, 100])
-# table.add_row([200, 200, 200, 200, 200])
-# table.add_row([300, 300, 300, 300, 300])
-# table.add_row([400, 400, 400, 400, 400])
-# table.add_row([500, 500, 500, 500, 500])
-
 with open("seed.py") as f:
         exec(f.read())
 
@@ -51,8 +43,6 @@ def print_table():
     table.add_column(columns[2], table_list_history)
     table.add_column(columns[3], table_list_finance)
     table.add_column(columns[4], table_list_movie)
-
-
 
 print("""
 
