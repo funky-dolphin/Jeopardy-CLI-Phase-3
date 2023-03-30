@@ -39,7 +39,6 @@ print(f'\n{table }')
 all_categories = session.query(Category).all()
 # all_points = session.query(Point).all()
 
-
 all_points = 0
 
 def username():
