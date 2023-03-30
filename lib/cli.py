@@ -14,16 +14,20 @@ engine = create_engine('sqlite:///Jeopardy.db')
 Session = sessionmaker(bind=engine)
 session = Session()
 
+# table = PrettyTable()
+# table.field_names = ["Science", "Anime", "Bizzare History", "Finance", "Movie Quotes"]
+# table.add_row([100, 100, 100, 100, 100])
+# table.add_row([200, 200, 200, 200, 200])
+# table.add_row([300, 300, 300, 300, 300])
+# table.add_row([400, 400, 400, 400, 400])
+# table.add_row([500, 500, 500, 500, 500])
 
-
-
-table = PrettyTable()
-table.field_names = ["Science", "Anime", "Bizzare History", "Finance", "Movie Quotes"]
-table.add_row([100, 100, 100, 100, 100])
-table.add_row([200, 200, 200, 200, 200])
-table.add_row([300, 300, 300, 300, 300])
-table.add_row([400, 400, 400, 400, 400])
-table.add_row([500, 500, 500, 500, 500])
+points_for_table = session.query(Point.points).all()
+print(points_for_table)
+table1 = PrettyTable()
+table1.field_names = ["Science","Anime", "Bizzare History", "Finance", "Movie Quotes"]
+table1.add_column("Science",[points_for_table])
+print(table1)
 
 print("""
 
@@ -34,7 +38,7 @@ print("""
 ╚█████╔╝███████╗╚██████╔╝██║     ██║  ██║██║  ██║██████╔╝   ██║   
  ╚════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝    ╚═╝                                                                   
  """)
-print(f'\n{table }')
+# print(f'\n{table }')
 
 all_categories = session.query(Category).all()
 # all_points = session.query(Point).all()
