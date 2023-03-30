@@ -63,12 +63,8 @@ print("""
 ╚█████╔╝███████╗╚██████╔╝██║     ██║  ██║██║  ██║██████╔╝   ██║   
  ╚════╝ ╚══════╝ ╚═════╝ ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝    ╚═╝                                                                   
  """)
-<<<<<<< HEAD
-# print(f'\n{table }')
-=======
 print_table()
 print(f'\n{table}')
->>>>>>> main
 
 all_categories = session.query(Category).all()
 # all_points = session.query(Point).all()
