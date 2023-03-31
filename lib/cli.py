@@ -37,7 +37,7 @@ def print_table():
     table_query_movie = session.query(Question.point).filter(Question.category == "Movie Quotes").all()
     table_list_movie = [item for t in table_query_movie for item in t]
 
-    columns=["Science", "Anime", "Bizzare History", "Finance", "Movie Quotes"]
+    columns=["Science", "Anime", "Bizarre History", "Finance", "Movie Quotes"]
     table.add_column(columns[0], table_list_science)
     table.add_column(columns[1], table_list_anime)
     table.add_column(columns[2], table_list_history)
@@ -200,6 +200,7 @@ def answer():
 ╚███╔███╔╝██║  ██║╚██████╔╝██║ ╚████║╚██████╔╝██╗
  ╚══╝╚══╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝
 """)
+            print(f'\n Correct Answer: {chosen_question.answer}')
             turn += 1
             all_points += int(points)
             pick_category()

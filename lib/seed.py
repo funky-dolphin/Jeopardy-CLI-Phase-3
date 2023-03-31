@@ -33,12 +33,12 @@ sciq5 = Question("ATP is the molecular unit of energy. What does ATP stand for?"
 
 aniq1 = Question("What is the name of Goku's Saiyan rival?", "Vegeta", cat2.category, pt1.points)
 aniq2 = Question("What is the name of the genius tactician in Naruto's generation?", "Shikamaru", cat2.category, pt2.points)
-aniq3 = Question("What is the name of Izuku Midoriya's quirk? ", "One for all", cat2.category, pt3.points)
+aniq3 = Question("What is the name of Izuku Midoriya's quirk? ", "One for All", cat2.category, pt3.points)
 aniq4 = Question("What is Nico Robin's role in the Straw Hat's Pirate Crew?", "Archaeologist", cat2.category, pt4.points)
 aniq5 = Question("What is the name of the first villian to show up in One Punch Man", "Vaccine man", cat2.category, pt5.points)
 
 bhq1 = Question("Around 300 million years ago, earth's land masses existed as a supercontinent.  What was this landmass called?", "Pangea", cat3.category, pt1.points)
-bhq2 = Question("The start of World War I is is commonly said to have started of due to the assination of this Austrian Archduke.", "Franz Ferdinand", cat3.category, pt2.points)
+bhq2 = Question("The start of World War I is commonly said to have started of due to the assination of this Austrian Archduke.", "Franz Ferdinand", cat3.category, pt2.points)
 bhq3 = Question("What was the name of this Eurasian trade route active from the 2nd Centure BCE to the mid 15th Century responsible for the global distribution of goods?", "The Silk Road", cat3.category, pt3.points)
 bhq4 = Question("Civil Rights activist Martin Luther King Jr was assinated in this city.", "Memphis", cat3.category, pt4.points)
 bhq5 = Question("The Black Plague is known as of the most devastating global epidemics to date. It spread via a zoonotic bacteria carried by fleas on the the backs of traveling rats.  What is the name of this bacteria?", "Yersinia pestis", cat3.category, pt5.points)
@@ -51,7 +51,7 @@ fiq5 = Question("In the wake of the 2008 financial crisis, the federal governmen
 
 mqq1 = Question("Leave the gun, take the cannoli's...", "The Godfather", cat5.category, pt1.points)
 mqq2 = Question("But you merely adopted the dark; I was born in it, moulded by it... ", "The Dark Knight Rises", cat5.category, pt2.points)
-mqq3 = Question("I ate his liver with some fava beans and a nice Chianti...", "The Slience of the Lambs", cat5.category, pt3.points)
+mqq3 = Question("I ate his liver with some fava beans and a nice Chianti...", "The Silence of the Lambs", cat5.category, pt3.points)
 mqq4 = Question("It was Johnny Hopkins and Sloan Ketting. And they were blazing that sh*t up every day...", "Step Brothers", cat5.category, pt4.points)
 mqq5 = Question("I like to move it, move it!...", "Madagascar", cat5.category, pt5.points)
 
